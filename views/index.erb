@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<style>
+			body {
+				background: purple;
+				text-align: center;
+				padding: 20px; 
+			}
+
+		</style>
+	</head>
+	<body>
+        <p style="font-size:45px">
+            .hangman
+        </p>
+        <p style="font-size:45px">
+            <%= session[:completed_game] %>
+        </p>        
+		<p>
+			<form method='POST' action='/'>
+				<input type='text' name='guess'  />
+				<input type='submit' value='Enter' />
+			</form>
+		</p>
+		<p>
+			Word is: <%= session[:word] %>
+		</p>
+		<p>
+			
+		</p>			
+	</body>
+</html>
