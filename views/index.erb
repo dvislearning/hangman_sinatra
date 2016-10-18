@@ -2,31 +2,35 @@
 	<head>
 		<style>
 			body {
-				background: purple;
+				background: black;
 				text-align: center;
-				padding: 20px; 
+				color: green;
+				padding: 12px; 
 			}
 
 		</style>
 	</head>
 	<body>
-        <p style="font-size:45px">
-            .hangman
+        <p style="font-size:15px">
+            hangman.
         </p>
-        <p style="font-size:45px">
-            <%= session[:completed_game] %>
+        <p style="font-size:40px; letter-spacing: 6px">
+            <%= session[:word_as_dashes] %>
         </p>        
 		<p>
-			<form method='POST' action='/'>
+			Guesses Remaining: <%= session[:guesses_left] %>
+		</p>
+		<p>
+			<form method='POST' action='/guess'>
 				<input type='text' name='guess'  />
 				<input type='submit' value='Enter' />
 			</form>
 		</p>
 		<p>
-			Word is: <%= session[:word] %>
-		</p>
+			<%= session[:game_message] %>
+		</p>				
 		<p>
-			
-		</p>			
+			Incorrect Guesses: <%= session[:incorrect_guesses].join(', ').upcase %>
+		</p>		
 	</body>
 </html>

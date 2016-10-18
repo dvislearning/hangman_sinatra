@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<style>
+			body {
+				background: black;
+				text-align: center;
+				color: green;
+				padding: 10px;
+			}
+
+			#win_pic{
+                width: 200px;
+                height: 200px;
+			}
+
+		</style>
+	</head>
+	<body>
+        <p style="font-size:45px">
+            Win
+        </p>
+
+        <p>
+            <img id ="win_pic" src="win.jpg">
+        </p>        
+
+		<p style="font-size:20px">
+			You correctly guessed:
+		</p>
+        <p style="font-size:40px; letter-spacing: 6px">
+            <%= session[:game_word] %>
+        </p>        
+		<p>
+			<form method='GET' action='/'>
+				<label>Play Again?</label><br><br>
+				<input type='submit' value='Yes' />
+			</form>
+		</p>		
+		<p>
+			Incorrect Guesses: <%= session[:incorrect_guesses].join(', ').upcase %>
+		</p>
+	</body>
+</html>
