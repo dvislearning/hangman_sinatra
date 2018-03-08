@@ -9,3 +9,8 @@ by typing out one letter at a time.  An ASCII string of a hangman is manipulated
 Players also have the option to save the current state of their game and reload it in the future.  This is done using YAML.
 
 Lastly, players have the option to see which letters they have already chosen.
+
+### Edits
+
+March 8, 2018:
+ - Fix Sinatra rack middleware vulnerability.
